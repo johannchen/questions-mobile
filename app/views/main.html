@@ -1,0 +1,67 @@
+<div class="topcoat-navigation-bar">
+	<div class="topcoat-navigation-bar__item left half">
+		<h1 class="topcoat-navigation-bar__title">Good Questions</h1>
+	</div>
+	<div class="topcoat-navigation-bar__item right half">
+		<select class="dropdown" ng-model="dropdown" ng-change="changeDropdown()">
+			<option value="">All</option>
+			<option value="Light">Light</option>
+			<option value="Deep">Deep</option>
+			<option value="Faith">Faith</option>
+			<option value="Add">Add</option>
+			<option value="About">About</option>
+		</select>
+	</div>
+</div>
+
+<div class="content">        
+	<section id="main-question" ng-show="selectedQuestion">
+		<h3>{{mainQuestion.question}}</h3>
+	</section>
+
+	<section id="new-question" ng-show="selectedAdd">
+		<form name="questionForm">
+			<div class="field">
+				<textarea class="topcoat-textarea" rows="4" cols="12" placeholder="Submit a good question for approval" ng-model="question" required></textarea>
+			</div>
+			<div class="topcoat-tab-bar field">
+				<label class="topcoat-tab-bar__item">
+					<input type="radio" name="tab-bar" value="Light" ng-model="category">
+					<button class="topcoat-tab-bar__button">Light</button>
+				</label>         
+				<label class="topcoat-tab-bar__item">
+					<input type="radio" name="tab-bar" value="Deep" ng-model="category">
+					<button class="topcoat-tab-bar__button">Deep</button>
+				</label>
+				<label class="topcoat-tab-bar__item">
+					<input type="radio" name="tab-bar" value="Faith" ng-model="category">
+					<button class="topcoat-tab-bar__button">Faith</button>
+				</label>
+			</div>   
+			<div class="field"> 
+				<button class="topcoat-button--cta" ng-disabled="questionForm.$invalid" ng-click="submitQuestion()">Submit</button>   
+			</div>
+		</form>
+	</section>
+
+	<section id="about" ng-show="selectedAbout">
+		<p>Good questions that help to enhance meaningful conversations.</p>
+		<p>Swipe left for next question, and swipe right for previous question.</p>
+		<p>You can contribute by submitting new good questions for approval.</p>
+	</section>
+</div>
+
+<div id="footer" ng-show="selectedQuestion">
+	<div class="topcoat-navigation-bar">
+		<div class="topcoat-navigation-bar__item left half">
+			<button class="topcoat-icon-button--quiet" ng-click="prevQuestion()">
+				<span class="topcoat-icon arrow-left-icon"></span>
+			</button>
+		</div>
+		<div class="topcoat-navigation-bar__item right half">
+			<button class="topcoat-icon-button--quiet" ng-click="nextQuestion()">
+				<span class="topcoat-icon arrow-right-icon"></span>
+			</button>
+		</div>
+	</div>
+</div>
