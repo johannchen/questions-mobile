@@ -26,6 +26,10 @@ select.dropdown {
     min-height: 200px;
 }
 
+#approved-filter {
+    float: right;
+}
+
 #footer {
    position:fixed;
    left:0;
@@ -42,6 +46,11 @@ select.dropdown {
 
 .field {
     padding-top: 10px;
+}
+
+.category {
+    padding-left: 10px;
+    font-weight: bold;
 }
 
 .menu-icon {
@@ -64,3 +73,25 @@ select.dropdown {
     -moz-background-size: cover;
     background-size: cover;
 }
+
+.delete-icon {
+    background: url("/img/delete.svg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.pencil-icon {
+    background: url("/img/pencil.svg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.checkmark-icon {
+    background: url("/img/checkmark.svg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+

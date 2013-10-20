@@ -88,12 +88,11 @@ angular.module('questionsApp')
     	}
     };
     
-    //TODO: switch approved to false
     $scope.submitQuestion = function() {
       var newQuestion = {
         question: $scope.question,
         category: $scope.category,
-        approved: true,
+        approved: false,
         popularity: 1,
         created_at: new Date()
       }
