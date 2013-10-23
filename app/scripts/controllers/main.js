@@ -34,6 +34,10 @@ angular.module('questionsApp')
         $scope.mainQuestion = $scope.filteredQuestions[i];
         $scope.readQuestions.push($scope.mainQuestion);
         $scope.filteredQuestions.splice(i, 1);
+    };
+
+    $scope.refresh = function() {
+      location.reload();
     }
 
     $scope.changeDropdown = function() {
@@ -55,15 +59,11 @@ angular.module('questionsApp')
           $scope.selectedAbout = false;
           $scope.selectedQuestion = true;
         } else {
-          // TODO: reset to questions
-          /*
           $scope.filteredQuestions = $filter('filter')($scope.questions, '');
           resetQuestions();
           $scope.selectedAdd = false;
           $scope.selectedAbout = false;
           $scope.selectedQuestion = true;
-          */
-          location.reload();
         }
     };
 

@@ -1,8 +1,13 @@
 <div class="topcoat-navigation-bar">
-	<div class="topcoat-navigation-bar__item left half">
+	<div class="topcoat-navigation-bar__item left quarter">		
+		<button class="topcoat-icon-button--quiet" ng-click="refresh()">
+			<span class="topcoat-icon refresh-icon"></span>
+		</button>
+	</div>
+	<div class="topcoat-navigation-bar__item center half">
 		<h1 class="topcoat-navigation-bar__title">Good Questions</h1>
 	</div>
-	<div class="topcoat-navigation-bar__item right half">
+	<div class="topcoat-navigation-bar__item right quarter">		
 		<select class="dropdown" ng-model="dropdown" ng-change="changeDropdown()">
 			<option value="">All</option>
 			<option value="Light">Light</option>
@@ -24,20 +29,29 @@
 			<div class="field">
 				<textarea class="topcoat-textarea" rows="4" cols="12" placeholder="Submit a good question for approval" ng-model="question" required></textarea>
 			</div>
-			<div class="topcoat-tab-bar field">
-				<label class="topcoat-tab-bar__item">
-					<input type="radio" name="tab-bar" value="Light" ng-model="category">
-					<button class="topcoat-tab-bar__button">Light</button>
-				</label>         
-				<label class="topcoat-tab-bar__item">
-					<input type="radio" name="tab-bar" value="Deep" ng-model="category">
-					<button class="topcoat-tab-bar__button">Deep</button>
-				</label>
-				<label class="topcoat-tab-bar__item">
-					<input type="radio" name="tab-bar" value="Faith" ng-model="category">
-					<button class="topcoat-tab-bar__button">Faith</button>
-				</label>
-			</div>   
+			<div class="field">
+				<div class="radio-inline">
+					<label class="topcoat-radio-button">
+						<input type="radio" name="category" value="Light" ng-model="category">
+						<div class="topcoat-radio-button__checkmark"></div>
+						Light
+					</label>
+				</div>
+				<div class="radio-inline">
+					<label class="topcoat-radio-button">
+						<input type="radio" name="category" value="Deep" ng-model="category">
+						<div class="topcoat-radio-button__checkmark"></div>
+						Deep
+					</label>
+				</div>
+				<div class="radio-inline">
+					<label class="topcoat-radio-button">
+						<input type="radio" name="category" value="Faith" ng-model="category">
+						<div class="topcoat-radio-button__checkmark"></div>
+						Faith
+					</label>
+				</div>
+			</div>  
 			<div class="field"> 
 				<button class="topcoat-button--cta" ng-disabled="questionForm.$invalid" ng-click="submitQuestion()">Submit</button>   
 			</div>
@@ -45,8 +59,7 @@
 	</section>
 
 	<section id="about" ng-show="selectedAbout">
-		<p>Good questions that help to enhance meaningful conversations.</p>
-		<p>Swipe left for next question, and swipe right for previous question.</p>
+		<p>Good questions to stimulate interesting and meaningful conversations.</p>
 		<p>You can contribute by submitting new good questions for approval.</p>
 	</section>
 </div>

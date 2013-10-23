@@ -14,7 +14,7 @@
 	</div>
 </div>
 
-<div class="topcoat-list">
+<div class="topcoat-list" id="question-list">
   <h3 class="topcoat-list__header">{{header}}</h3>
   <ul class="topcoat-list__container">
     <li class="topcoat-list__item" ng-repeat="question in questions | filter:statusFilter | filter:search | orderBy:'-created_at'">
@@ -24,20 +24,29 @@
 			</div>
 			<form name="editForm" ng-show="editing">
 				<textarea class="topcoat-textarea field" rows="3" cols="12" ng-model="question.question"></textarea>
-				<div class="topcoat-tab-bar field">
-					<label class="topcoat-tab-bar__item">
-						<input type="radio" name="tab-bar" value="Light" ng-model="question.category">
-						<button class="topcoat-tab-bar__button">Light</button>
-					</label>         
-					<label class="topcoat-tab-bar__item">
-						<input type="radio" name="tab-bar" value="Deep" ng-model="question.category">
-						<button class="topcoat-tab-bar__button">Deep</button>
-					</label>
-					<label class="topcoat-tab-bar__item">
-						<input type="radio" name="tab-bar" value="Faith" ng-model="question.category">
-						<button class="topcoat-tab-bar__button">Faith</button>
+				<div class="field">
+				<div class="radio-inline">
+					<label class="topcoat-radio-button">
+						<input type="radio" name="category" value="Light" ng-model="question.category">
+						<div class="topcoat-radio-button__checkmark"></div>
+						Light
 					</label>
 				</div>
+				<div class="radio-inline">
+					<label class="topcoat-radio-button">
+						<input type="radio" name="category" value="Deep" ng-model="question.category">
+						<div class="topcoat-radio-button__checkmark"></div>
+						Deep
+					</label>
+				</div>
+				<div class="radio-inline">
+					<label class="topcoat-radio-button">
+						<input type="radio" name="category" value="Faith" ng-model="question.category">
+						<div class="topcoat-radio-button__checkmark"></div>
+						Faith
+					</label>
+				</div>
+			</div>  
 				<div class="topcoat-button-bar field">
 				  <div class="topcoat-button-bar__item">
 				    <button class="topcoat-button-bar__button" ng-click="updateQuestion(question)">Update</button>
