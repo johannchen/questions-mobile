@@ -15,7 +15,7 @@
 </div>
 
 <div class="topcoat-list" id="question-list">
-  <h3 class="topcoat-list__header">{{header}}</h3>
+  <h3 class="topcoat-list__header">{{header}} {{(questions | filter:statusFilter).length}}</h3>
   <ul class="topcoat-list__container">
     <li class="topcoat-list__item" ng-repeat="question in questions | filter:statusFilter | filter:search | orderBy:'-created_at'">
     	<div ng-model="editing" ng-hide="editing">

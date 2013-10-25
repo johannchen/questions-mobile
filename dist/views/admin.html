@@ -1,0 +1,83 @@
+<div class="topcoat-navigation-bar">
+	<div class="topcoat-navigation-bar__item left half">
+		<h1 class="topcoat-navigation-bar__title">Good Questions</h1>
+	</div>
+	<div class="topcoat-navigation-bar__item half">
+		<div id="approved-filter">
+			<h1>				
+				<label class="topcoat-checkbox">
+				  <input type="checkbox" ng-model="approved" ng-click="filterApproved()">
+				  <div class="topcoat-checkbox__checkmark"></div>
+				</label>
+			</h1>
+		</div>
+	</div>
+</div>
+
+<div class="topcoat-list" id="question-list">
+  <h3 class="topcoat-list__header">{{header}} {{(questions | filter:statusFilter).length}}</h3>
+  <ul class="topcoat-list__container">
+    <li class="topcoat-list__item" ng-repeat="question in questions | filter:statusFilter | filter:search | orderBy:'-created_at'">
+    	<div ng-model="editing" ng-hide="editing">
+      	{{question.question}} 
+      	<span class="category">{{question.category}}</span>
+			</div>
+			<form name="editForm" ng-show="editing">
+				<textarea class="topcoat-textarea field" rows="3" cols="12" ng-model="question.question"></textarea>
+				<div class="field">
+				<div class="radio-inline">
+					<label class="topcoat-radio-button">
+						<input type="radio" name="category" value="Light" ng-model="question.category">
+						<div class="topcoat-radio-button__checkmark"></div>
+						Light
+					</label>
+				</div>
+				<div class="radio-inline">
+					<label class="topcoat-radio-button">
+						<input type="radio" name="category" value="Deep" ng-model="question.category">
+						<div class="topcoat-radio-button__checkmark"></div>
+						Deep
+					</label>
+				</div>
+				<div class="radio-inline">
+					<label class="topcoat-radio-button">
+						<input type="radio" name="category" value="Faith" ng-model="question.category">
+						<div class="topcoat-radio-button__checkmark"></div>
+						Faith
+					</label>
+				</div>
+			</div>  
+				<div class="topcoat-button-bar field">
+				  <div class="topcoat-button-bar__item">
+				    <button class="topcoat-button-bar__button" ng-click="updateQuestion(question)">Update</button>
+				  </div>
+				  <div class="topcoat-button-bar__item">
+				    <button class="topcoat-button-bar__button" ng-click="deleteQuestion(question)">Delete</button>
+				  </div>
+				  <div class="topcoat-button-bar__item">
+				    <button class="topcoat-button-bar__button" ng-click="hideEditForm()">Cancel</button>
+				  </div>
+				</div>   
+			</form>
+			<div ng-hide="editing">
+				<button class="topcoat-icon-button--quiet" ng-click="approve(question)" ng-hide="approved">
+					<span class="topcoat-icon checkmark-icon"></span>
+				</button>
+	      <button class="topcoat-icon-button--quiet" ng-click="showEditForm()">
+					<span class="topcoat-icon pencil-icon"></span>
+				</button>
+				<button class="topcoat-icon-button--quiet" ng-click="deleteQuestion(question)">
+					<span class="topcoat-icon delete-icon"></span>
+				</button>
+			</div>			      
+    </li>
+  </ul>
+</div>
+
+<div id="footer">
+	<div class="topcoat-navigation-bar">
+		<div class="topcoat-navigation-bar__item left full">
+			<input type="search" value="" placeholder="search" class="topcoat-search-input" ng-model="search.question">
+		</div>
+	</div>
+</div>

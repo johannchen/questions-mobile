@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('questionsApp')
-  .controller('MainCtrl', function ($scope, $filter, Question) {    
+  .controller('MainCtrl', ['$scope', '$filter', 'Question', function ($scope, $filter, Question) {    
     $scope.dropdown = "";
     $scope.selectedAdd = false;
     $scope.selectedAbout = false;
@@ -105,4 +105,4 @@ angular.module('questionsApp')
       $scope.question = "";
 
     };
-  });
+  }]);

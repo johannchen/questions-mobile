@@ -1,0 +1,80 @@
+<div class="topcoat-navigation-bar">
+	<div class="topcoat-navigation-bar__item left quarter">		
+		<button class="topcoat-icon-button--quiet" ng-click="refresh()">
+			<span class="topcoat-icon refresh-icon"></span>
+		</button>
+	</div>
+	<div class="topcoat-navigation-bar__item center half">
+		<h1 class="topcoat-navigation-bar__title">Good Questions</h1>
+	</div>
+	<div class="topcoat-navigation-bar__item right quarter">		
+		<select class="dropdown" ng-model="dropdown" ng-change="changeDropdown()">
+			<option value="">All</option>
+			<option value="Light">Light</option>
+			<option value="Deep">Deep</option>
+			<option value="Faith">Faith</option>
+			<option value="Add">Add</option>
+			<option value="About">About</option>
+		</select>
+	</div>
+</div>
+
+<div class="content">        
+	<section id="main-question" ng-show="selectedQuestion">
+		<h3>{{mainQuestion.question}}</h3>
+	</section>
+
+	<section id="new-question" ng-show="selectedAdd">
+		<form name="questionForm">
+			<div class="field">
+				<textarea class="topcoat-textarea" rows="4" cols="12" placeholder="Submit a good question for approval" ng-model="question" required=""></textarea>
+			</div>
+			<div class="field">
+				<div class="radio-inline">
+					<label class="topcoat-radio-button">
+						<input type="radio" name="category" value="Light" ng-model="category">
+						<div class="topcoat-radio-button__checkmark"></div>
+						Light
+					</label>
+				</div>
+				<div class="radio-inline">
+					<label class="topcoat-radio-button">
+						<input type="radio" name="category" value="Deep" ng-model="category">
+						<div class="topcoat-radio-button__checkmark"></div>
+						Deep
+					</label>
+				</div>
+				<div class="radio-inline">
+					<label class="topcoat-radio-button">
+						<input type="radio" name="category" value="Faith" ng-model="category">
+						<div class="topcoat-radio-button__checkmark"></div>
+						Faith
+					</label>
+				</div>
+			</div>  
+			<div class="field"> 
+				<button class="topcoat-button--cta" ng-disabled="questionForm.$invalid" ng-click="submitQuestion()">Submit</button>   
+			</div>
+		</form>
+	</section>
+
+	<section id="about" ng-show="selectedAbout">
+		<p>Good questions to stimulate interesting and meaningful conversations.</p>
+		<p>You can contribute by submitting new good questions for approval.</p>
+	</section>
+</div>
+
+<div id="footer" ng-show="selectedQuestion">
+	<div class="topcoat-navigation-bar">
+		<div class="topcoat-navigation-bar__item left half">
+			<button class="topcoat-icon-button--quiet" ng-click="prevQuestion()">
+				<span class="topcoat-icon arrow-left-icon"></span>
+			</button>
+		</div>
+		<div class="topcoat-navigation-bar__item right half">
+			<button class="topcoat-icon-button--quiet" ng-click="nextQuestion()">
+				<span class="topcoat-icon arrow-right-icon"></span>
+			</button>
+		</div>
+	</div>
+</div>

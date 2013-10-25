@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('questionsApp')
-  .controller('AdminCtrl', function ($scope, Question) {
+  .controller('AdminCtrl', ['$scope', 'Question', function ($scope, Question) {
     $scope.header = "Waiting for approval";
     $scope.approved = false;
     $scope.statusFilter = {approved: false};
@@ -53,4 +53,4 @@ angular.module('questionsApp')
         this.editing = false;
     };
 
-  });
+  }]);
