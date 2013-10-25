@@ -59,49 +59,49 @@ select.dropdown {
 }
 
 .menu-icon {
-    background: url("/img/hamburger_dark.svg") no-repeat;
+    background: url("../img/hamburger_dark.svg") no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
 }
 
 .arrow-left-icon {
-    background: url("/img/arrow_left.svg") no-repeat;
+    background: url("../img/arrow_left.svg") no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
 }
 
 .arrow-right-icon {
-    background: url("/img/arrow_right.svg") no-repeat;
+    background: url("../img/arrow_right.svg") no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
 }
 
 .delete-icon {
-    background: url("/img/delete.svg") no-repeat;
+    background: url("../img/delete.svg") no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
 }
 
 .pencil-icon {
-    background: url("/img/pencil.svg") no-repeat;
+    background: url("../img/pencil.svg") no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
 }
 
 .checkmark-icon {
-    background: url("/img/checkmark.svg") no-repeat;
+    background: url("../img/checkmark.svg") no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
 }
 
 .refresh-icon {
-    background: url("/img/refresh.svg") no-repeat;
+    background: url("../img/refresh.svg") no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;

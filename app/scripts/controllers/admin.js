@@ -29,16 +29,14 @@ angular.module('questionsApp')
 
     $scope.approve = function(question) {
       question.approved = true;
-      var now = new Date();
-      question.created_at = now.toString();
+      question.created_at = new Date();
       question.update(function() {
         console.log("approved question");
       });
     };
 
     $scope.updateQuestion = function(question) {
-      var now = new Date();
-      question.created_at = now.toString();
+      question.created_at = new Date();
       question.update(function() {
           console.log("updated question");
       });
